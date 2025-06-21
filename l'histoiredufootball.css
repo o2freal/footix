@@ -1,0 +1,224 @@
+/* Global styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-image: url('https://wallup.net/wp-content/uploads/2014/11/fifa-world-cup-brazil.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+header {
+    background-color: rgba(51, 51, 51, 0.7);  /* Fond semi-transparent pour effet givré */
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);  /* Applique un flou pour l'effet glacé */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Ombre subtile pour donner du relief */
+}
+
+.bandeau h1 {
+    margin: 0;
+    padding-left: 20px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+nav {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Menu déroulant */
+.menu-deroulant:hover .sous-menu {
+    display: block;
+}
+
+.sous-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 40px;
+    left: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    max-height: 300px;  /* Limite de hauteur du menu */
+    overflow-y: auto;   /* Permet le défilement vertical */
+}
+
+.sous-menu li a {
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.sous-menu li a:hover {
+    background-color: #555;
+}
+
+nav ul li:hover a {
+    background-color: #444;
+}
+
+/* Article */
+.article-content {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+}
+
+.article-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.article-intro {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.article-body {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+.article-body p {
+    margin-bottom: 15px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #004d99;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.7);  /* Fond semi-transparent pour effet givré */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    backdrop-filter: blur(10px);  /* Applique un flou pour l'effet glacé */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);  /* Ombre subtile pour donner du relief */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-social ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    text-decoration: underline;
+}
+
+.footer-info p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .article-content {
+        padding: 20px;
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    .article-body {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        font-size: 1rem
+    }
+
+    /* Réduire la hauteur du menu déroulant sur petits écrans */
+    .sous-menu {
+        max-height: 200px;  /* Moins de hauteur sur petits écrans */
+    }
+}
